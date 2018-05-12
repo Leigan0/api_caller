@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js --exec babel-node --presets env"
+    "test": "mocha --compilers js:babel-register",
+    "start": "nodemon lib/server.js --exec babel-node",
+    "build": "babel lib -d dist",
+    "serve": "node dist/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +20,8 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "mocha": "^5.1.1",
     "nodemon": "^1.17.4"
   }
 }
